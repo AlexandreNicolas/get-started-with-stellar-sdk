@@ -1,5 +1,7 @@
-$MAKEFILES = $(shell find . -maxdepth 3 -type f -name Makefile)
-SUBDIRS   = $(filter-out ./,$(dir $($MAKEFILES)))
+MAKEFILES = $(shell find . -maxdepth 3 -type f -name Makefile \
+	! -path "./Makefile" \
+	! -path "./node_modules/*")
+SUBDIRS   = $(filter-out ./,$(dir $(MAKEFILES)))
 
 default: build
 

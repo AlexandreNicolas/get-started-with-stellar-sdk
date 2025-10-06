@@ -1,21 +1,24 @@
-import { Keypair, rpc } from "@stellar/stellar-sdk";
+import {
+  Keypair,
+  rpc,
+} from "@stellar/stellar-sdk";
 import { deployContract, uploadWasm } from "../utils/deploy.js";
 
-export async function deployHelloWorldContract(
+export async function deployIncrementContract(
   provider: rpc.Server,
   signer: Keypair
 ) {
-  console.log("Deploying Hello World Contract...");
+  console.log("Deploying Increment Contract...");
 
   const wasmFilePath =
-    "contracts/hello_world/target/wasm32v1-none/release/soroban_hello_world_contract.wasm";
+    "contracts/increment/target/wasm32v1-none/release/soroban_increment_contract.wasm";
   const uploadResponse = await uploadWasm(provider, signer, wasmFilePath);
   const contractAddress = await deployContract(
     provider,
     signer,
     uploadResponse
   );
-  console.log(`Deployed Hello World Contract: ${contractAddress}`);
+  console.log(`Deployed Increment Contract: ${contractAddress}`);
 
   return contractAddress;
 }

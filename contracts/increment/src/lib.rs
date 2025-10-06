@@ -29,6 +29,16 @@ impl IncrementContract {
         // Return the count to the caller.
         count
     }
+
+    pub fn get_count(env: Env) -> u32 {
+        env.storage().instance().get(&COUNTER).unwrap_or(0)
+    }
+
+    pub fn reset(env: Env) {
+        let zero: u32 = 0;
+        env.storage().instance().set(&COUNTER, &zero);
+        env.storage().instance().extend_ttl(50, 100);
+    }
 }
 
 mod test;
