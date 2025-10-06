@@ -1,0 +1,31 @@
+{
+  "name": "get-started-with-stellar-sdk",
+  "version": "1.0.0",
+  "description": "Examples of how to user Stellar SDK",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "hello-world": "npx tsx src/hello_world/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexandreNicolas/get-started-with-stellar-sdk.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/AlexandreNicolas/get-started-with-stellar-sdk/issues"
+  },
+  "homepage": "https://github.com/AlexandreNicolas/get-started-with-stellar-sdk#readme",
+  "devDependencies": {
+    "@types/node": "^24.7.0",
+    "dotenv": "^17.2.3",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@stellar/stellar-sdk": "^14.2.0"
+  }
+}

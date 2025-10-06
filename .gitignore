@@ -137,3 +137,16 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+target/
+/.sccache/
+.DS_Store
+.soroban
+.stellar/
+out/
+test_snapshots
+z-dc-build-info/*
+**1pass.tmp**
+.idea
+.run/
+.zshrc
